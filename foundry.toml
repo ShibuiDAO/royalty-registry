@@ -2,5 +2,11 @@
 src = 'src'
 out = 'out'
 libs = ['lib']
+solc-version = "0.8.11"
+verbosity = 2
+ffi = true
+optimizer = true
+optimizer_runs = 1000000
+eth-rpc-url = "http://127.0.0.1:8545/"
 
 # See more config options https://github.com/gakonst/foundry/tree/master/config

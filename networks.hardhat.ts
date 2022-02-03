@@ -1,7 +1,11 @@
 import type { NetworksUserConfig } from 'hardhat/types';
 
 export const networks: NetworksUserConfig = {
-	hardhat: {},
+	hardhat: {
+		accounts: {
+			mnemonic: 'fold taxi business smoke clap flash jewel doll path clutch switch valid stone clinic leopard tongue arrow pave stomach harbor tissue wing chapter adapt'
+		}
+	},
 	local: {
 		chainId: 99,
 		url: 'http://127.0.0.1:8545',
