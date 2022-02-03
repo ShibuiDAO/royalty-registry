@@ -6,6 +6,8 @@
     "lint": "prettier --write src/**/*.sol"
   },
   "devDependencies": {
+    "@openzeppelin/contracts": "^4.4.2",
+    "@openzeppelin/contracts-upgradeable": "^4.4.2",
     "prettier": "^2.5.1",
     "prettier-plugin-solidity": "^1.0.0-beta.19",
     "pretty-quick": "^3.1.3",

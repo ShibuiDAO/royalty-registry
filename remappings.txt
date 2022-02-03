@@ -1,2 +1,3 @@
 ds-test/=lib/ds-test/src/
 solid/=lib/solid/src/
+@openzeppelin/=node_modules/@openzeppelin/
