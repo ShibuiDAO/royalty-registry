@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.11;
 
-import {IERC165} from "solid/utils/interfaces/IERC165.sol";
+import {IERC165} from "@shibuidao/solid/src/utils/interfaces/IERC165.sol";
 
 /// @dev Royalty registry interface.
 /// @author Shibui

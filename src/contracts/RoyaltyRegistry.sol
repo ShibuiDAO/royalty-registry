@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.11;
 
-import {ERC165} from "solid/utils/ERC165.sol";
+import {ERC165} from "@shibuidao/solid/src/utils/ERC165.sol";
 import {ERC165Checker} from "@openzeppelin/contracts/utils/introspection/ERC165Checker.sol";
-import {OwnableUpgradeable} from "solid/auth/OwnableUpgradeable.sol";
+import {OwnableUpgradeable} from "@shibuidao/solid/src/auth/OwnableUpgradeable.sol";
 import {AddressUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol";
 
 import {IRoyaltyRegistry} from "./IRoyaltyRegistry.sol";
-import {IERC165} from "solid/utils/interfaces/IERC165.sol";
+import {IERC165} from "@shibuidao/solid/src/utils/interfaces/IERC165.sol";
 import {IAdminControl} from "./access/IAdminControl.sol";
 import {IAccessControlUpgradeable} from "@openzeppelin/contracts-upgradeable/access/IAccessControlUpgradeable.sol";
 
