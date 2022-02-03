@@ -26,4 +26,10 @@ contract RoyaltyRegistryTest is BaseTest {
 	function testDefaultReturn() public {
 		assertEq(royaltyRegistry.getRoyaltyLookupAddress(address(token)), address(token));
 	}
+
+    function testAllowRejects() public {
+        vm.startPrank(0x7D4cCAb3828E8A215845b89Cdb5D873bbe1EEA7E);
+        vm.expectRevert("Permission denied");
+		royaltyRegistry.setRoyaltyLookupAddress(address(token), address(token));
+	}
 }

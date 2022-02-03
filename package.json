@@ -24,7 +24,10 @@
 		"test:localh:forge": "forge test --ffi --rpc-url=http://127.0.0.1:8545/ --gas-report",
 		"test:hardhat:coverage": "hardhat coverage --network hardhat",
 		"lint:sol": "prettier --write src/**/*.sol",
-		"sversion": "standard-version"
+		"sversion": "standard-version",
+
+		"predeploy:registry:frame": "yarn clean",
+		"deploy:registry:frame": "hardhat run ./scripts/deployRoyaltyRegistry.ts --network frame"
 	},
 	"dependencies": {},
 	"devDependencies": {

@@ -6,6 +6,9 @@ export const networks: NetworksUserConfig = {
 			mnemonic: 'fold taxi business smoke clap flash jewel doll path clutch switch valid stone clinic leopard tongue arrow pave stomach harbor tissue wing chapter adapt'
 		}
 	},
+	frame: {
+		url: 'http://127.0.0.1:1248'
+	},
 	local: {
 		chainId: 99,
 		url: 'http://127.0.0.1:8545',

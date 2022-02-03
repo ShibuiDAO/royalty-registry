@@ -20,6 +20,7 @@ task('accounts', 'Prints the list of accounts', async (_, hre) => {
 
 const config: HardhatUserConfig = {
 	paths: {
+		root: './',
 		sources: './src/contracts',
 		tests: './test'
 	},
