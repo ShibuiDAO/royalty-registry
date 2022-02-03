@@ -10,15 +10,14 @@ async function main() {
 
     const RoyaltyRegistryContract = await ethers.getContractFactory('RoyaltyRegistry');
     const royaltyRegistry = (await upgrades.deployProxy(RoyaltyRegistryContract, [], {
-        initializer: 'initialize',
-        kind: 'transparent'
+        initializer: 'initialize'
     })) as RoyaltyRegistry;
     await royaltyRegistry.deployed();
 
 	console.log(
 		[
 			`Joint testnet contracts: ` /**/,
-			` - "RoyaltyRegistry" deployed to ${royaltyRegistry.address}`,
+			` - "RoyaltyRegistry" deployed to ${royaltyRegistry.address}; Owner is ${await royaltyRegistry.owner()}`,
 			` - Deployer address is ${deployer.address}`
 		].join('\n')
 	);
