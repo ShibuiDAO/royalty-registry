@@ -21,7 +21,7 @@
 		"test:localh:_init": "yarn test:localh:hardhat && yarn test:localh:hardhat:deploy && yarn test:localh:forge",
 		"test:localh:hardhat": "hardhat test --network localh",
 		"test:localh:hardhat:deploy": "hardhat run ./scripts/tests/proxyDeploy.ts --network localh",
-		"test:localh:forge": "forge test --ffi --rpc-url=http://127.0.0.1:8545/",
+		"test:localh:forge": "forge test --ffi --rpc-url=http://127.0.0.1:8545/ --gas-report",
 		"test:hardhat:coverage": "hardhat coverage --network hardhat",
 		"lint:sol": "prettier --write src/**/*.sol",
 		"sversion": "standard-version"
