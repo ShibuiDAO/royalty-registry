@@ -4,6 +4,7 @@ import '@nomiclabs/hardhat-waffle';
 import '@openzeppelin/hardhat-upgrades';
 import '@typechain/hardhat';
 import 'hardhat-abi-exporter';
+import 'hardhat-deploy';
 import 'hardhat-gas-reporter';
 import 'hardhat-tracer';
 import { HardhatUserConfig, task } from 'hardhat/config';
@@ -25,12 +26,13 @@ const config: HardhatUserConfig = {
 		tests: './test'
 	},
 	solidity: {
-		version: '0.8.11',
+		version: '0.8.9',
 		settings: {
 			optimizer: {
 				enabled: true,
 				runs: 1000000
 			},
+			metadata: { useLiteralContent: true },
 			outputSelection: {
 				'*': {
 					'*': ['storageLayout']

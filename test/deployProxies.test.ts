@@ -10,7 +10,7 @@ describe('Deploy Proxies', () => {
 		it('Should deploy', async () => {
 			const RoyaltyRegistryContract = await ethers.getContractFactory('RoyaltyRegistry');
 			const royaltyRegistry = (await upgrades.deployProxy(RoyaltyRegistryContract, [], {
-				initializer: 'initialize',
+				initializer: '__RoyaltyRegistry_init',
 				kind: 'transparent'
 			})) as RoyaltyRegistry;
 			await royaltyRegistry.deployed();

@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.11;
+pragma solidity ^0.8.9;
 
 import {ERC165} from "@shibuidao/solid/src/utils/ERC165.sol";
 import {ERC165Checker} from "@openzeppelin/contracts/utils/introspection/ERC165Checker.sol";
+import {Initializable} from "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import {AddressUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol";
 
@@ -14,14 +15,19 @@ import {IAccessControlUpgradeable} from "@openzeppelin/contracts-upgradeable/acc
 /// @dev Registry to lookup royalty configurations.
 /// @author Shibui
 /// @author Modified from Manifold (https://github.com/manifoldxyz/royalty-registry-solidity/blob/main/contracts/RoyaltyRegistry.sol)
-contract RoyaltyRegistry is ERC165, OwnableUpgradeable, IRoyaltyRegistry {
+contract RoyaltyRegistry is ERC165, Initializable, OwnableUpgradeable, IRoyaltyRegistry {
 	using AddressUpgradeable for address;
 
 	/// @dev Override addresses
 	mapping(address => address) private _overrides;
 
-	function initialize() public initializer {
-		__Ownable_init_unchained();
+	/// @custom:oz-upgrades-unsafe-allow constructor
+	// solhint-disable-next-line no-empty-blocks
+	constructor() initializer {}
+
+	// solhint-disable-next-line func-name-mixedcase
+	function __RoyaltyRegistry_init() public initializer {
+		__Ownable_init();
 	}
 
 	/// @dev IERC165 supportsInterface implementation.

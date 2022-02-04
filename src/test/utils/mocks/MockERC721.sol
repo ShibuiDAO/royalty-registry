@@ -1,4 +1,4 @@
-pragma solidity 0.8.11;
+pragma solidity ^0.8.9;
 
 import {ERC721} from "solmate/tokens/ERC721.sol";
 

@@ -8,15 +8,16 @@ async function main() {
 	const [deployer] = await ethers.getSigners();
 	const shibuiMetaDirectory = join(__dirname, '..', '..', '.shibui');
 
-    const RoyaltyRegistryContract = await ethers.getContractFactory('RoyaltyRegistry');
-    const royaltyRegistry = (await upgrades.deployProxy(RoyaltyRegistryContract, [], {
-        initializer: 'initialize'
-    })) as RoyaltyRegistry;
-    await royaltyRegistry.deployed();
+	const RoyaltyRegistryContract = await ethers.getContractFactory('RoyaltyRegistry');
+	const royaltyRegistry = (await upgrades.deployProxy(RoyaltyRegistryContract, [], {
+		initializer: '__RoyaltyRegistry_init',
+		kind: 'transparent'
+	})) as RoyaltyRegistry;
+	await royaltyRegistry.deployed();
 
 	console.log(
 		[
-			`Joint testnet contracts: ` /**/,
+			`Joint testnet contracts: ` /**/, //
 			` - "RoyaltyRegistry" deployed to ${royaltyRegistry.address}; Owner is ${await royaltyRegistry.owner()}`,
 			` - Deployer address is ${deployer.address}`
 		].join('\n')

@@ -6,14 +6,14 @@ async function main() {
 
 	const RoyaltyRegistryContract = await ethers.getContractFactory('RoyaltyRegistry');
 	const royaltyRegistry = (await upgrades.deployProxy(RoyaltyRegistryContract, [], {
-		initializer: 'initialize',
+		initializer: '__RoyaltyRegistry_init',
 		kind: 'transparent'
 	})) as RoyaltyRegistry;
 	await royaltyRegistry.deployed();
 
 	console.log(
 		[
-			`Deployed:` /**/,
+			`Deployed:` /**/, //
 			` - "RoyaltyRegistry" deployed to ${royaltyRegistry.address}`,
 			` - Deployer address is ${deployer.address}`
 		].join('\n')

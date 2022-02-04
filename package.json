@@ -21,15 +21,16 @@
 		"test:localh:_init": "yarn test:localh:hardhat && yarn test:localh:hardhat:deploy && yarn test:localh:forge",
 		"test:localh:hardhat": "hardhat test --network localh",
 		"test:localh:hardhat:deploy": "hardhat run ./scripts/tests/proxyDeploy.ts --network localh",
-		"test:localh:forge": "forge test --ffi --rpc-url=http://127.0.0.1:8545/ --gas-report",
+		"test:forge": "forge test --gas-report --force",
 		"test:hardhat:coverage": "hardhat coverage --network hardhat",
 		"lint:sol": "prettier --write src/**/*.sol",
 		"sversion": "standard-version",
-
 		"predeploy:registry:frame": "yarn clean",
 		"deploy:registry:frame": "hardhat run ./scripts/deployRoyaltyRegistry.ts --network frame"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"hardhat-deploy": "^0.10.4"
+	},
 	"devDependencies": {
 		"@nomiclabs/hardhat-ethers": "^2.0.2",
 		"@nomiclabs/hardhat-solhint": "^2.0.0",

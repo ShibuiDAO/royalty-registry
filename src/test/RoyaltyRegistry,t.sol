@@ -1,25 +1,21 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.11;
+pragma solidity ^0.8.9;
 
 import {BaseTest} from "@shibuidao/solid/src/tests/base/BaseTest.sol";
 
-import {IRoyaltyRegistry} from "../contracts/IRoyaltyRegistry.sol";
-
+import {MockRoyaltyRegistry} from "./utils/mocks/MockRoyaltyRegistry.sol";
 import {MockERC721} from "./utils/mocks/MockERC721.sol";
 
 contract RoyaltyRegistryTest is BaseTest {
-	IRoyaltyRegistry internal royaltyRegistry;
+	MockRoyaltyRegistry internal royaltyRegistry;
 	MockERC721 internal token;
 
 	function setUp() public {
-		string[] memory deploymentAddressCommand = new string[](2);
-		deploymentAddressCommand[0] = "cat";
-		deploymentAddressCommand[1] = ".shibui/deployments";
+		royaltyRegistry = new MockRoyaltyRegistry();
+        vm.startPrank(0x3711D654fC31fc70039B485a77c082e8e89D9F05);
+        royaltyRegistry.mockInit();
+        vm.stopPrank();
 
-		bytes memory deploymentAddresses = vm.ffi(deploymentAddressCommand);
-		address _royaltyRegistry = abi.decode(deploymentAddresses, (address));
-
-		royaltyRegistry = IRoyaltyRegistry(_royaltyRegistry);
 		token = new MockERC721("Mock Token", "MTKN");
 	}
 
