@@ -3,7 +3,8 @@ pragma solidity ^0.8.9;
 
 import {IERC165} from "@shibuidao/solid/src/utils/interfaces/IERC165.sol";
 
-/// @dev Lookup engine interface
+/// @notice Lookup engine interface.
+/// @author Shibui
 /// @author Modified from Manifold (https://github.com/manifoldxyz/royalty-registry-solidity/blob/main/contracts/IRoyaltyEngineV1.sol)
 interface IRoyaltyEngine is IERC165 {
 	/// @notice Get the royalty for a given token (address, id) and value amount.  Does not cache the bps/amounts.  Caches the spec for a given token address.

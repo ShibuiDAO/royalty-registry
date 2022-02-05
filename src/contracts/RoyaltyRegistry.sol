@@ -12,7 +12,7 @@ import {IERC165} from "@shibuidao/solid/src/utils/interfaces/IERC165.sol";
 import {IAdminControl} from "./access/IAdminControl.sol";
 import {IAccessControlUpgradeable} from "@openzeppelin/contracts-upgradeable/access/IAccessControlUpgradeable.sol";
 
-/// @dev Registry to lookup royalty configurations.
+/// @notice Registry to lookup royalty configurations.
 /// @author Shibui
 /// @author Modified from Manifold (https://github.com/manifoldxyz/royalty-registry-solidity/blob/main/contracts/RoyaltyRegistry.sol)
 contract RoyaltyRegistry is ERC165, Initializable, OwnableUpgradeable, IRoyaltyRegistry {
@@ -30,19 +30,19 @@ contract RoyaltyRegistry is ERC165, Initializable, OwnableUpgradeable, IRoyaltyR
 		__Ownable_init();
 	}
 
-	/// @dev IERC165 supportsInterface implementation.
+	/// @inheritdoc IERC165
 	function supportsInterface(bytes4 interfaceId) public pure virtual override(ERC165, IERC165) returns (bool) {
 		return interfaceId == type(IRoyaltyRegistry).interfaceId || super.supportsInterface(interfaceId);
 	}
 
-	/// @dev IRoyaltyRegistry getRoyaltyLookupAddress implementation.
+	/// @inheritdoc IRoyaltyRegistry
 	function getRoyaltyLookupAddress(address tokenAddress) external view override returns (address) {
 		address override_ = _overrides[tokenAddress];
 		if (override_ != address(0)) return override_;
 		return tokenAddress;
 	}
 
-	/// @dev IRoyaltyRegistry setRoyaltyLookupAddress implementation.
+	/// @inheritdoc IRoyaltyRegistry
 	function setRoyaltyLookupAddress(address tokenAddress, address royaltyLookupAddress) public payable override {
 		require(tokenAddress.isContract() && (royaltyLookupAddress.isContract() || royaltyLookupAddress == address(0)), "Invalid input");
 		require(overrideAllowed(tokenAddress), "Permission denied");
@@ -50,7 +50,7 @@ contract RoyaltyRegistry is ERC165, Initializable, OwnableUpgradeable, IRoyaltyR
 		emit RoyaltyOverride(_msgSender(), tokenAddress, royaltyLookupAddress);
 	}
 
-	/// @dev IRoyaltyRegistry overrideAllowed implementation.
+	/// @inheritdoc IRoyaltyRegistry
 	function overrideAllowed(address tokenAddress) public view override returns (bool) {
 		if (owner() == _msgSender()) return true;
 
