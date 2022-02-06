@@ -47,7 +47,7 @@ const config: HardhatUserConfig = {
 		runOnCompile: true,
 		clear: true,
 		flat: true,
-		only: ['RoyaltyRegistry.sol']
+		only: ['RoyaltyRegistry', 'RoyaltyEngine']
 	},
 	gasReporter: {
 		showTimeSpent: true,
