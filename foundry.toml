@@ -6,6 +6,6 @@ solc-version = "0.8.9"
 verbosity = 2
 optimizer = true
 optimizer_runs = 1000000
-gas_reports = ["RoyaltyRegistry", "MockRoyaltyRegistry"]
+gas_reports = ["RoyaltyRegistry", "MockRoyaltyRegistry", "RoyaltyEngineV1", "MockRoyaltyEngineV1"]
 
 # See more config options https://github.com/gakonst/foundry/tree/master/config

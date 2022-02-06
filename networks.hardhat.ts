@@ -3,7 +3,8 @@ import type { NetworksUserConfig } from 'hardhat/types';
 export const networks: NetworksUserConfig = {
 	hardhat: {
 		accounts: {
-			mnemonic: 'fold taxi business smoke clap flash jewel doll path clutch switch valid stone clinic leopard tongue arrow pave stomach harbor tissue wing chapter adapt'
+			mnemonic:
+				'fold taxi business smoke clap flash jewel doll path clutch switch valid stone clinic leopard tongue arrow pave stomach harbor tissue wing chapter adapt'
 		}
 	},
 	frame: {

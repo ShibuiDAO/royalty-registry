@@ -18,7 +18,7 @@
 		"precompile": "yarn clean",
 		"compile": "yarn compile:localh:hardhat",
 		"compile:localh:hardhat": "hardhat compile --network localh",
-		"test:localh:_init": "yarn test:localh:hardhat && yarn test:localh:hardhat:deploy && yarn test:localh:forge",
+		"test:localh:_init": "yarn test:localh:hardhat && yarn test:localh:hardhat:deploy && yarn test:forge",
 		"test:localh:hardhat": "hardhat test --network localh",
 		"test:localh:hardhat:deploy": "hardhat run ./scripts/tests/proxyDeploy.ts --network localh",
 		"test:forge": "forge test --gas-report --force",
