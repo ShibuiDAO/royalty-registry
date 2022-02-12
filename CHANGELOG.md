@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/ShibuiDAO/royalty-registry/compare/v0.1.1...v0.1.2) (2022-02-12)
+
+
+### Features
+
+* deploy script for override ([dc715d0](https://github.com/ShibuiDAO/royalty-registry/commit/dc715d046659f011a140d890d509d78795af967e))
+
 ### 0.1.1 (2022-02-09)
 
 
