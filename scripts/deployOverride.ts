@@ -1,7 +1,7 @@
 import { ethers } from 'hardhat';
 
-const OVERRIDE_ASSET = '';
-const COLLECTION_OWNER = '';
+const OVERRIDE_ASSET = process.env.OVERRIDE_ASSET || '';
+const COLLECTION_OWNER = process.env.COLLECTION_OWNER || '';
 
 async function main() {
 	const [deployer] = await ethers.getSigners();
