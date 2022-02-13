@@ -1,9 +1,13 @@
+import assert from 'assert';
 import { ethers } from 'hardhat';
 
 const OVERRIDE_ASSET = process.env.OVERRIDE_ASSET || '';
 const COLLECTION_OWNER = process.env.COLLECTION_OWNER || '';
 
 async function main() {
+	assert.notEqual(OVERRIDE_ASSET, undefined);
+	assert.notEqual(COLLECTION_OWNER, undefined);
+
 	const [deployer] = await ethers.getSigners();
 
 	const ERC2981RoyaltyOverrideContract = await ethers.getContractFactory('ERC2981RoyaltyOverride');
