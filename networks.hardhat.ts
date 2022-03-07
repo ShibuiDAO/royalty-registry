@@ -1,4 +1,5 @@
 import type { NetworksUserConfig } from 'hardhat/types';
+import { testnetPrivateKey } from './config.hardhat';
 
 export const networks: NetworksUserConfig = {
 	hardhat: {
@@ -24,6 +25,7 @@ export const networks: NetworksUserConfig = {
 		url: 'https://mainnet.boba.network/'
 	},
 	bobaRinkeby: {
-		url: 'https://rinkeby.boba.network/'
+		url: 'https://rinkeby.boba.network/',
+		accounts: [testnetPrivateKey]
 	}
 };

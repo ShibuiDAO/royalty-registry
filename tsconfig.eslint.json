@@ -4,5 +4,6 @@
 		"allowJs": true,
 		"checkJs": true
 	},
-	"include": ["test", "scripts", "typechain", "hardhat.config.ts", "networks.hardhat.ts"]
+	"include": ["./scripts", "./test", "./typechain"],
+	"files": ["hardhat.config.ts", "networks.hardhat.ts", "config.hardhat.ts"]
 }

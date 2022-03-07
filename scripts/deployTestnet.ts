@@ -20,8 +20,8 @@ async function main() {
 
 	console.log(
 		[
-			` - "RoyaltyRegistry" deployed to ${royaltyRegistry.address}`,
-			` - "RoyaltyEngineV1" deployed to ${royaltyEngineV1.address}`,
+			` - "RoyaltyRegistry" deployed to ${royaltyRegistry.address} at #${royaltyRegistry.deployTransaction.blockNumber}`,
+			` - "RoyaltyEngineV1" deployed to ${royaltyEngineV1.address} at #${royaltyEngineV1.deployTransaction.blockNumber}`,
 			`Deployer address is ${deployer.address}`
 		].join('\n')
 	);
